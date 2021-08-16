@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
-}
+.snackbar_react_ui .centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.snackbar_react_ui .notification {
+  position: fixed;
+  bottom: 20px;
+  background: #333;
+  padding: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 0 25px rgba(33, 33, 33, 0.5);
+  border-radius: 3px;
+  transform: translateY(150px);
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 999999;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  left: 50%;
+  transform: translate(-50%, 150px); }
+
+.snackbar_react_ui .notification.active {
+  transform: translate(-50%, 0px);
+  opacity: 1; }
+
+.snackbar_react_ui .notification a {
+  color: skyblue;
+  text-decoration: none;
+  display: block;
+  float: right;
+  width: auto;
+  padding: 0 10px;
+  height: 40px;
+  margin-left: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px; }
+
+.snackbar_react_ui .text {
+  padding: 0 10px;
+  text-align: center;
+  white-space: pre-line; }
+
+.snackbar_react_ui .left {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center; }
 
-.App-link {
-  color: #61dafb;
-}
+.snackbar_react_ui .close {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.snackbar_react_ui .ripple {
+  overflow: hidden;
+  position: relative; }
+
+.snackbar_react_ui .ripple::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: none; }
+
+.snackbar_react_ui .ripple.rect::after {
+  border-radius: 0; }
+
+.snackbar_react_ui .close .text {
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%; }
+
+.snackbar_react_ui .ripple:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: 0.7s rip ease 1; }
+
+@keyframes rip {
+  0% {
+    width: 5px;
+    height: 5px; }
+  75% {
+    transform: scale(4); } }
+
+@media only screen and (max-width: 560px) {
+  .snackbar_react_ui .notification {
+    width: 100%;
+    bottom: 0;
+    border-radius: 0; } }

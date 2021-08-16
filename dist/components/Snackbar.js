@@ -1,7 +1,20 @@
-import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import "./Snackbar.scss";
-const INFO = /*#__PURE__*/React.createElement("svg", {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.showSnackBar = showSnackBar;
+exports.SnackBarPopup = void 0;
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = require("react-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const INFO = /*#__PURE__*/_react.default.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: 40,
   height: 40,
@@ -12,22 +25,23 @@ const INFO = /*#__PURE__*/React.createElement("svg", {
   strokeLinecap: "round",
   strokeLinejoin: "round" // style={{ marginRight: 20, minWidth: 24 }}
 
-}, /*#__PURE__*/React.createElement("circle", {
+}, /*#__PURE__*/_react.default.createElement("circle", {
   cx: 12,
   cy: 12,
   r: 10
-}), /*#__PURE__*/React.createElement("line", {
+}), /*#__PURE__*/_react.default.createElement("line", {
   x1: 12,
   y1: 16,
   x2: 12,
   y2: 12
-}), /*#__PURE__*/React.createElement("line", {
+}), /*#__PURE__*/_react.default.createElement("line", {
   x1: 12,
   y1: 8,
   x2: 12,
   y2: 8
 }));
-const ERROR = /*#__PURE__*/React.createElement("svg", {
+
+const ERROR = /*#__PURE__*/_react.default.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: 40,
   height: 40,
@@ -38,22 +52,23 @@ const ERROR = /*#__PURE__*/React.createElement("svg", {
   strokeLinecap: "round",
   strokeLinejoin: "round" // style={{ marginRight: 20, minWidth: 24 }}
 
-}, /*#__PURE__*/React.createElement("circle", {
+}, /*#__PURE__*/_react.default.createElement("circle", {
   cx: 12,
   cy: 12,
   r: 10
-}), /*#__PURE__*/React.createElement("line", {
+}), /*#__PURE__*/_react.default.createElement("line", {
   x1: 12,
   y1: 8,
   x2: 12,
   y2: 12
-}), /*#__PURE__*/React.createElement("line", {
+}), /*#__PURE__*/_react.default.createElement("line", {
   x1: 12,
   y1: 16,
   x2: 12,
   y2: 16
 }));
-const SUCCESS = /*#__PURE__*/React.createElement("svg", {
+
+const SUCCESS = /*#__PURE__*/_react.default.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: 40,
   height: 40,
@@ -64,24 +79,28 @@ const SUCCESS = /*#__PURE__*/React.createElement("svg", {
   strokeLinecap: "round",
   strokeLinejoin: "round" // style={{ marginRight: 20, minWidth: 24 }}
 
-}, /*#__PURE__*/React.createElement("path", {
+}, /*#__PURE__*/_react.default.createElement("path", {
   d: "M22 11.08V12a10 10 0 1 1-5.93-9.14"
-}), /*#__PURE__*/React.createElement("polyline", {
+}), /*#__PURE__*/_react.default.createElement("polyline", {
   points: "22 4 12 14.01 9 11.01"
 }));
-export const SnackBarPopup = ({
-  children,
-  //
-  open = false,
-  handleClose = null,
-  message = "",
-  type = null,
-  autoHideDuration = 5000,
-  autoHide = true
-}) => {
-  const [barOpen, setBarOpen] = React.useState(false); // Similar to componentDidMount and componentDidUpdate:
 
-  React.useEffect(() => {
+const SnackBarPopup = _ref => {
+  let {
+    children,
+    //
+    open = false,
+    handleClose = null,
+    message = "",
+    type = null,
+    autoHideDuration = 5000,
+    autoHide = true
+  } = _ref;
+
+  const [barOpen, setBarOpen] = _react.default.useState(false); // Similar to componentDidMount and componentDidUpdate:
+
+
+  _react.default.useEffect(() => {
     // console.log(open, barOpen);
     if (open === true && barOpen === false) {
       setTimeout(() => {
@@ -113,12 +132,12 @@ export const SnackBarPopup = ({
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "snackbar_react_ui"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     id: "snackbarNotification",
     className: barOpen ? "notification active" : "notification"
-  }, type && /*#__PURE__*/React.createElement("div", {
+  }, type && /*#__PURE__*/_react.default.createElement("div", {
     className: "left"
   }, (() => {
     switch (type) {
@@ -134,13 +153,13 @@ export const SnackBarPopup = ({
       default:
         return null;
     }
-  })()), /*#__PURE__*/React.createElement("div", {
+  })()), /*#__PURE__*/_react.default.createElement("div", {
     className: "text"
-  }, message), /*#__PURE__*/React.createElement("div", {
+  }, message), /*#__PURE__*/_react.default.createElement("div", {
     id: "closeBtn",
     className: "close ripple",
     onClick: customHandleClose
-  }, /*#__PURE__*/React.createElement("svg", {
+  }, /*#__PURE__*/_react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: 20,
     height: 20,
@@ -154,12 +173,12 @@ export const SnackBarPopup = ({
       marginRight: 0,
       minWidth: 24
     }
-  }, /*#__PURE__*/React.createElement("line", {
+  }, /*#__PURE__*/_react.default.createElement("line", {
     x1: 18,
     y1: 6,
     x2: 6,
     y2: 18
-  }), /*#__PURE__*/React.createElement("line", {
+  }), /*#__PURE__*/_react.default.createElement("line", {
     x1: 6,
     y1: 6,
     x2: 18,
@@ -167,18 +186,21 @@ export const SnackBarPopup = ({
   })))));
 };
 
-function createElementReconfirm(properties, renderComponent = true) {
+exports.SnackBarPopup = SnackBarPopup;
+
+function createElementReconfirm(properties) {
+  let renderComponent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
   let divTarget = document.getElementById("snackBarPopup");
 
   if (divTarget) {
     // Rerender - the mounted ReactConfirmAlert
-    render( /*#__PURE__*/React.createElement(SnackBarPopup, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBarPopup, properties), divTarget);
   } else {
     // Mount the ReactConfirmAlert component
     divTarget = document.createElement("div");
     divTarget.id = "snackBarPopup";
     document.body.appendChild(divTarget);
-    render( /*#__PURE__*/React.createElement(SnackBarPopup, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBarPopup, properties), divTarget);
   }
 }
 
@@ -186,11 +208,11 @@ function removeElementReconfirm() {
   const target = document.getElementById("snackBarPopup");
 
   if (target) {
-    unmountComponentAtNode(target);
+    (0, _reactDom.unmountComponentAtNode)(target);
     target.parentNode.removeChild(target);
   }
 }
 
-export function showSnackBar(properties) {
+function showSnackBar(properties) {
   createElementReconfirm(properties);
 }
