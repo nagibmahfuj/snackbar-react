@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.showSnackBar = showSnackBar;
-exports.SnackBarPopup = void 0;
+exports.SnackBar = void 0;
 
 require("core-js/modules/web.dom-collections.iterator.js");
 
@@ -85,7 +85,7 @@ const SUCCESS = /*#__PURE__*/_react.default.createElement("svg", {
   points: "22 4 12 14.01 9 11.01"
 }));
 
-const SnackBarPopup = _ref => {
+const SnackBar = _ref => {
   let {
     children,
     //
@@ -186,26 +186,26 @@ const SnackBarPopup = _ref => {
   })))));
 };
 
-exports.SnackBarPopup = SnackBarPopup;
+exports.SnackBar = SnackBar;
 
 function createElementReconfirm(properties) {
   let renderComponent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-  let divTarget = document.getElementById("snackBarPopup");
+  let divTarget = document.getElementById("snackBar");
 
   if (divTarget) {
     // Rerender - the mounted ReactConfirmAlert
-    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBarPopup, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBar, properties), divTarget);
   } else {
     // Mount the ReactConfirmAlert component
     divTarget = document.createElement("div");
-    divTarget.id = "snackBarPopup";
+    divTarget.id = "snackBar";
     document.body.appendChild(divTarget);
-    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBarPopup, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBar, properties), divTarget);
   }
 }
 
 function removeElementReconfirm() {
-  const target = document.getElementById("snackBarPopup");
+  const target = document.getElementById("snackBar");
 
   if (target) {
     (0, _reactDom.unmountComponentAtNode)(target);

@@ -1,4 +1,4 @@
-import { SnackBarPopup as SnackBar } from "./lib/components/Snackbar";
+import { SnackBar } from "./lib";
 import "./App.css";
 
 function App() {

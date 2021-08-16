@@ -3,11 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+Object.defineProperty(exports, "SnackBar", {
+  enumerable: true,
+  get: function get() {
+    return _Snackbar.SnackBar;
+  }
+});
+Object.defineProperty(exports, "showSnackBar", {
+  enumerable: true,
+  get: function get() {
+    return _Snackbar.showSnackBar;
+  }
+});
 
-var _Snackbar = _interopRequireDefault(require("./components/Snackbar"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = _Snackbar.default;
-exports.default = _default;
+var _Snackbar = require("./components/Snackbar");

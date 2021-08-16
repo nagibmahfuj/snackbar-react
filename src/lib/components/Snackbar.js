@@ -57,7 +57,7 @@ const SUCCESS = (
 	</svg>
 );
 
-export const SnackBarPopup = ({
+export const SnackBar = ({
 	children, //
 	open = false,
 	handleClose = null,
@@ -148,21 +148,21 @@ export const SnackBarPopup = ({
 };
 
 function createElementReconfirm(properties, renderComponent = true) {
-	let divTarget = document.getElementById("snackBarPopup");
+	let divTarget = document.getElementById("snackBar");
 	if (divTarget) {
 		// Rerender - the mounted ReactConfirmAlert
-		render(<SnackBarPopup {...properties} />, divTarget);
+		render(<SnackBar {...properties} />, divTarget);
 	} else {
 		// Mount the ReactConfirmAlert component
 		divTarget = document.createElement("div");
-		divTarget.id = "snackBarPopup";
+		divTarget.id = "snackBar";
 		document.body.appendChild(divTarget);
-		render(<SnackBarPopup {...properties} />, divTarget);
+		render(<SnackBar {...properties} />, divTarget);
 	}
 }
 
 function removeElementReconfirm() {
-	const target = document.getElementById("snackBarPopup");
+	const target = document.getElementById("snackBar");
 	if (target) {
 		unmountComponentAtNode(target);
 		target.parentNode.removeChild(target);

@@ -1,3 +1,3 @@
-import Snackbar from "./components/Snackbar";
+import { SnackBar, showSnackBar } from "./components/Snackbar";
 
-export default Snackbar;
+export { SnackBar, showSnackBar };
