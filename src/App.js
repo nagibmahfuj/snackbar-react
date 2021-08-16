@@ -1,5 +1,5 @@
-import { SnackBar } from "./lib";
-import "./App.css";
+import { Snackbar } from "./lib";
+import "./lib/components/styles/main.scss";
 
 function App() {
 	return (
@@ -15,13 +15,13 @@ function App() {
 		>
 			<p>Wow, look at this component library.</p>
 			<h5>A notification snackbar:</h5>
-			<SnackBar
+			<Snackbar
 				open={true} //
 				handleClose={() => {
 					alert("You pressed the close button");
 				}}
 				type="success"
-				message="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+				message="Your username/password is not valid."
 				autoHide={false}
 			/>
 		</div>

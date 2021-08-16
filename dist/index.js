@@ -3,16 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "SnackBar", {
+Object.defineProperty(exports, "Snackbar", {
   enumerable: true,
   get: function get() {
-    return _Snackbar.SnackBar;
+    return _Snackbar.Snackbar;
   }
 });
-Object.defineProperty(exports, "showSnackBar", {
+Object.defineProperty(exports, "showSnackbar", {
   enumerable: true,
   get: function get() {
-    return _Snackbar.showSnackBar;
+    return _Snackbar.showSnackbar;
   }
 });
 

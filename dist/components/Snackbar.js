@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.showSnackBar = showSnackBar;
-exports.SnackBar = void 0;
+exports.showSnackbar = showSnackbar;
+exports.Snackbar = void 0;
 
 require("core-js/modules/web.dom-collections.iterator.js");
 
@@ -85,7 +85,7 @@ const SUCCESS = /*#__PURE__*/_react.default.createElement("svg", {
   points: "22 4 12 14.01 9 11.01"
 }));
 
-const SnackBar = _ref => {
+const Snackbar = _ref => {
   let {
     children,
     //
@@ -122,7 +122,7 @@ const SnackBar = _ref => {
   };
 
   const customHandleClose = () => {
-    document.querySelector("#snackbarNotification").className = "notification";
+    document.querySelector("#snackbarNotification").className = "snackbar_react_notification";
 
     if (open === true && barOpen === true) {
       setTimeout(() => {
@@ -136,7 +136,7 @@ const SnackBar = _ref => {
     className: "snackbar_react_ui"
   }, /*#__PURE__*/_react.default.createElement("div", {
     id: "snackbarNotification",
-    className: barOpen ? "notification active" : "notification"
+    className: barOpen ? "snackbar_react_notification active" : "snackbar_react_notification"
   }, type && /*#__PURE__*/_react.default.createElement("div", {
     className: "left"
   }, (() => {
@@ -154,6 +154,9 @@ const SnackBar = _ref => {
         return null;
     }
   })()), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      flex: 1
+    },
     className: "text"
   }, message), /*#__PURE__*/_react.default.createElement("div", {
     id: "closeBtn",
@@ -186,7 +189,7 @@ const SnackBar = _ref => {
   })))));
 };
 
-exports.SnackBar = SnackBar;
+exports.Snackbar = Snackbar;
 
 function createElementReconfirm(properties) {
   let renderComponent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -194,13 +197,13 @@ function createElementReconfirm(properties) {
 
   if (divTarget) {
     // Rerender - the mounted ReactConfirmAlert
-    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBar, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(Snackbar, properties), divTarget);
   } else {
     // Mount the ReactConfirmAlert component
     divTarget = document.createElement("div");
     divTarget.id = "snackBar";
     document.body.appendChild(divTarget);
-    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(SnackBar, properties), divTarget);
+    (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(Snackbar, properties), divTarget);
   }
 }
 
@@ -213,6 +216,6 @@ function removeElementReconfirm() {
   }
 }
 
-function showSnackBar(properties) {
+function showSnackbar(properties) {
   createElementReconfirm(properties);
 }

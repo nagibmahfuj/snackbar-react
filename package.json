@@ -1,6 +1,6 @@
 {
 	"name": "snackbar-react",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"private": false,
 	"description": "A simple yet beautiful Snackbar popup component for React.",
 	"author": "Nagib Mahfuj",

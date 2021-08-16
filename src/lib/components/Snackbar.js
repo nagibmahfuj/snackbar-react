@@ -57,7 +57,7 @@ const SUCCESS = (
 	</svg>
 );
 
-export const SnackBar = ({
+export const Snackbar = ({
 	children, //
 	open = false,
 	handleClose = null,
@@ -91,7 +91,7 @@ export const SnackBar = ({
 	};
 
 	const customHandleClose = () => {
-		document.querySelector("#snackbarNotification").className = "notification";
+		document.querySelector("#snackbarNotification").className = "snackbar_react_notification";
 		if (open === true && barOpen === true) {
 			setTimeout(() => {
 				handleClose && handleClose();
@@ -102,7 +102,7 @@ export const SnackBar = ({
 
 	return (
 		<div className="snackbar_react_ui">
-			<div id="snackbarNotification" className={barOpen ? "notification active" : "notification"}>
+			<div id="snackbarNotification" className={barOpen ? "snackbar_react_notification active" : "snackbar_react_notification"}>
 				{type && (
 					<div className="left">
 						{(() => {
@@ -119,7 +119,7 @@ export const SnackBar = ({
 						})()}
 					</div>
 				)}
-				<div className="text">
+				<div style={{ flex: 1 }} className="text">
 					{message}
 					{/* <a className="ripple rect" href="#">
 						Learn more
@@ -151,13 +151,13 @@ function createElementReconfirm(properties, renderComponent = true) {
 	let divTarget = document.getElementById("snackBar");
 	if (divTarget) {
 		// Rerender - the mounted ReactConfirmAlert
-		render(<SnackBar {...properties} />, divTarget);
+		render(<Snackbar {...properties} />, divTarget);
 	} else {
 		// Mount the ReactConfirmAlert component
 		divTarget = document.createElement("div");
 		divTarget.id = "snackBar";
 		document.body.appendChild(divTarget);
-		render(<SnackBar {...properties} />, divTarget);
+		render(<Snackbar {...properties} />, divTarget);
 	}
 }
 
@@ -169,6 +169,6 @@ function removeElementReconfirm() {
 	}
 }
 
-export function showSnackBar(properties) {
+export function showSnackbar(properties) {
 	createElementReconfirm(properties);
 }

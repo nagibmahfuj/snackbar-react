@@ -7,7 +7,7 @@
 		transform: translate(-50%, -50%);
 	}
 
-	.notification {
+	.snackbar_react_notification {
 		position: fixed;
 		bottom: 20px;
 		background: #333;
@@ -25,14 +25,15 @@
 		align-items: center;
 		left: 50%;
 		transform: translate(-50%, 150px);
+		width: 33%;
 	}
 
-	.notification.active {
+	.snackbar_react_notification.active {
 		transform: translate(-50%, 0px);
 		opacity: 1;
 	}
 
-	.notification a {
+	.snackbar_react_notification a {
 		color: skyblue;
 		text-decoration: none;
 		display: block;
@@ -131,15 +132,63 @@
 		}
 	}
 
-	@media only screen and (max-width: 560px) {
-		.notification {
+	/* Extra small devices (phones, 600px and down) */
+	@media only screen and (max-width: 600px) {
+		.snackbar_react_notification {
 			width: 100%;
 			bottom: 0;
 			border-radius: 0;
 		}
+	}
 
-		.notification.active {
-			// transform: translateY(0px);
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+		.snackbar_react_notification {
+			max-width: 100%;
+			min-width: 100%;
+			bottom: 0;
+			border-radius: 0;
 		}
 	}
+
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media only screen and (min-width: 768px) {
+		.snackbar_react_notification {
+			width: auto;
+			min-width: 33%;
+			max-width: 66%;
+			bottom: 20px;
+			border-radius: 3px;
+		}
+	}
+
+	/* Large devices (laptops/desktops, 992px and up) */
+	@media only screen and (min-width: 992px) {
+		.snackbar_react_notification {
+			max-width: 50%;
+			bottom: 20px;
+			border-radius: 3px;
+		}
+	}
+
+	/* Extra large devices (large laptops and desktops, 1200px and up) */
+	@media only screen and (min-width: 1200px) {
+		.snackbar_react_notification {
+			max-width: 40%;
+			bottom: 20px;
+			border-radius: 3px;
+		}
+	}
+
+	// @media only screen and (max-width: 560px) {
+	// 	.snackbar_react_notification {
+	// 		width: 100%;
+	// 		bottom: 0;
+	// 		border-radius: 0;
+	// 	}
+
+	// 	.snackbar_react_notification.active {
+	// 		// transform: translateY(0px);
+	// 	}
+	// }
 }
