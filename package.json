@@ -1,9 +1,9 @@
 {
   "name": "snackbar-react",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
-  "description": "Two test React components",
-  "author": "A simple yet beautiful Snackbar popup component for React.",
+  "description": "A simple yet beautiful Snackbar popup component for React.",
+  "author": "Nagib Mahfuj",
   "keywords": [
     "react",
     "components",
@@ -21,6 +21,12 @@
       "@babel/preset-react"
     ]
   },
+  "main": "dist/Snackbar.js",
+  "module": "dist/Snackbar.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
