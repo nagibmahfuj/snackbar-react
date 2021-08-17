@@ -1,4 +1,4 @@
-## A small but functional npm package
+## A simple yet beautiful Snackbar popup component for React.
 
 ### Install
 
