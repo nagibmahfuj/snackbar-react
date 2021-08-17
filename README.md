@@ -8,7 +8,26 @@ Install using `npm install snackbar-react`
 ### Usage 
 
 In a React app, use the Snackbar component:  
-`import { SnackBarPopup as SnackBar, showSnackBar } from 'snackbar-react'`
+`import { Snackbar, showSnackbar } from 'snackbar-react'`
+
+```jsx
+<Snackbar
+    open={true}
+    type="success"
+    message="Your username/password is not valid."
+    autoHide={false}
+/>
+```
+Or use as a function `showSnackbar()`: 
+
+```js
+showSnackbar({
+    open: true,
+    type: "success",
+    message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    autoHide: false,
+});
+```
 
 #### Snackbar props
 
